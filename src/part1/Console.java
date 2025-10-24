@@ -29,17 +29,25 @@ public class Console {
 //				 }
 			 }
 			 else if(!(line.substring(0).equals("")) && (line.substring(0, 1).equals("P"))){
+				 
+				 if(!(count == 0)) {
+					 String l = line;
+					 Playlist p = new Playlist(line, nsg.clone());
+					 playlists[count1] = p;
 				
-				 Playlist p = new Playlist(line, nsg.clone());
-				 playlists[count1] = p;
-				 System.out.println(playlists[0]);
-//				 System.out.println(count1);
-				 count1 ++;
-//				 System.out.println(playlists[0]);
-				 for(int i = 0; i < 5; i ++) {
-					 nsg[i] = null;
+						 System.out.println(playlists[0]); 
+						 System.out.println(playlists[1]);
+						 
+					 
+//					 System.out.println(count1);
+					 count1 ++;
+//					 System.out.println(playlists[0]);
+					 for(int i = 0; i < 5; i ++) {
+						 nsg[i] = null;
+					 }
+					 count = 0;
 				 }
-				 count = 0;
+				 
 			 }
 		}
 		Scanner scan = new Scanner(System.in);
