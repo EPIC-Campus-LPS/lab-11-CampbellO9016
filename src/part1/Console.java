@@ -33,7 +33,7 @@ public class Console {
 			 else if(!(line.substring(0).equals("")) && (line.substring(0, 1).equals("P"))){
 				 
 				 if((count3 != 0)) {
-					 if(count3 == 7) {
+					 if(count3 % 7 == 0) {
 //						 System.out.println("run");
 						 Playlist p = new Playlist(l, nsg.clone());
 						 playlists[count1] = p; 
@@ -43,25 +43,25 @@ public class Console {
 						 }
 						 count = 0;
 					 }
-					 if(count3 == 14) {
+//					 else if(count3 == 14) {
 //						 System.out.println("run");
-						 Playlist p = new Playlist(l, nsg.clone());
-						 playlists[count1] = p; 
-						 count1 ++;
-						 for(int i = 0; i < 5; i ++) {
-							 nsg[i] = null;
-						 }
-						 count = 0;
-					 }
-					 else {
-						 Playlist p = new Playlist(line, nsg.clone());
-						 playlists[count1] = p; 
-						 count1 ++;
-						 for(int i = 0; i < 5; i ++) {
-							 nsg[i] = null;
-						 }
-						 count = 0;
-					 }
+//						 Playlist p = new Playlist(l, nsg.clone());
+//						 playlists[count1] = p; 
+//						 count1 ++;
+//						 for(int i = 0; i < 5; i ++) {
+//							 nsg[i] = null;
+//						 }
+//						 count = 0;
+//					 }
+//					 else {
+//						 Playlist p = new Playlist(line, nsg.clone());
+//						 playlists[count1] = p; 
+//						 count1 ++;
+//						 for(int i = 0; i < 5; i ++) {
+//							 nsg[i] = null;
+//						 }
+//						 count = 0;
+//					 }
 					 
 				 }
 				 l = line;
@@ -73,9 +73,10 @@ public class Console {
 		}
 		
 		Scanner scan = new Scanner(System.in);
+		Scanner scanin = new Scanner(System.in);
 		boolean t = true;
 		while(t) {
-			System.out.println("________________________________________________________________");
+			System.out.println("\n________________________________________________________________");
 			System.out.println("Playlist Viewer Menu\r\n"
 					+ "(A) View List of Playlists\r\n"
 					+ "(B) View a Playlist\r\n"
@@ -92,8 +93,9 @@ public class Console {
 			}
 			else if(inp.equals("B")) {
 				System.out.println("Which playlist would you like to view: ");
-				int b = scan.nextInt();
+				int b = scanin.nextInt();
 				b --;
+				System.out.println(playlists[b].getName());
 				System.out.println(playlists[b]);
 				//fix double printing of the main menu and finish b and c
 			}
@@ -124,11 +126,11 @@ public class Console {
 						System.out.print("None");
 					}
 				}
+				
 				else if(i.equals("B")) {
 					boolean yes2 = false;
-					if(i.equals("A")) {
 						System.out.println("What year would you like to search: ");
-						int i1 = scan.nextInt();
+						int i1 = scanin.nextInt();
 						System.out.println("Songs from "+i1 + "\n");
 						for(int j = 0; j < playlists.length; j ++) { 
 							song[] s = new song[5];
@@ -144,7 +146,6 @@ public class Console {
 						if(!yes2) {
 							System.out.print("None");
 						}
-				}
 			}
 				
 			}
