@@ -32,19 +32,19 @@ public class StudentRunner {
 					ntemp = line.substring(7);					
 				}
 				if(count == 1) {
-					mtemp = Integer.valueOf(line.substring(7));
+					mtemp = Integer.valueOf(line.substring(6));
 				}
 				if(count == 2) {
-					stemp = Integer.valueOf(line.substring(10));
+					stemp = Integer.valueOf(line.substring(9));
 				}
 				if(count == 3) {
-					htemp = Integer.valueOf(line.substring(10));
+					htemp = Integer.valueOf(line.substring(9));
 				}
 				if(count == 4) {
-					etemp = Integer.valueOf(line.substring(10));
+					etemp = Integer.valueOf(line.substring(9));
 				}
 				if(count == 5) {
-					ctemp = Integer.valueOf(line.substring(19));
+					ctemp = Integer.valueOf(line.substring(18));
 					yes = true;
 				}
 				if(yes) {
@@ -77,9 +77,9 @@ public class StudentRunner {
 		
 		System.out.println("Average Math Grade: " + mave);
 		System.out.println("Average Science Grade: " + save);
-		System.out.println("Average Math Grade: " + have);
-		System.out.println("Average Math Grade: " + eave);
-		System.out.println("Average Math Grade: " + cave);
+		System.out.println("Average History Grade: " + have);
+		System.out.println("Average English Grade: " + eave);
+		System.out.println("Average Computer Science Grade: " + cave);
 		
 //		scan.close();
 	}
